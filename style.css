@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.linkedin-icon .bi-linkedin {
+    color: #fff;
+    transition: color 0.2s;
+}
+.linkedin-icon:hover .bi-linkedin,
+.linkedin-icon:focus .bi-linkedin {
+    color: #0a66c2;
+}
+
+.accordion-button {
+    min-height: 120px;
+  }
+  .accordion-item {
+    min-height: 120px;
+  }
+
+body {
+    padding-top: 40px; 
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #212529;
+    color: #fff;
+  }
+  .accordion-button:not(.collapsed)::after {
+    filter: brightness(0) invert(1);
+}
+  .accordion-button:not(.collapsed):focus {
+    box-shadow: none;
+  }
+  .accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  #imgModal .modal-body img {
+    width: 100%;
+    max-width: 200vw;
+    max-height: 90vh;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+  }
+
+  #imgModal .modal-dialog {
+    max-width: 90vw;
+  }
+
+  :target {
+    scroll-margin-top: 70px;
+  }
