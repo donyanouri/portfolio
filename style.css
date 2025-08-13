@@ -1,7 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    padding-top: 40px;
+    background: #000; /* Black background */
+}
+
+.custom-navbar {
+    background: #000 !important;
+    font-family: 'MuseoModerno', sans-serif;
+    border-bottom: 1px solid #fff;
+}
+
+.custom-navbar .navbar-nav .nav-link {
+    color: #fff !important;
+    font-family: 'MuseoModerno', sans-serif;
+    transition: color 0.2s;
+}
+
+.custom-navbar .navbar-nav .nav-link:hover,
+.custom-navbar .navbar-nav .nav-link:focus,
+.custom-navbar .navbar-nav .nav-link.active {
+    color: #ffb3e6 !important;
+}
+
+footer {
+    border-top: 1px solid #fff;
+}
+
+.museo-font {
+    font-family: 'MuseoModerno', sans-serif !important;
+}
+
+.custom-header {
+    background: #000;
+    padding: 100px 0 80px 0;
+}
+
+.main-title {
+    font-family: 'MuseoModerno', sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    color: #ffb3e6;
+    letter-spacing: 0.03em;
+    text-shadow: 2px 2px 0 #fff, 4px 4px 0 #000;
+}
+
+.subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+.about-title {
+    font-family: 'MuseoModerno', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #ffb3e6;
+    letter-spacing: 0.03em;
+    text-shadow: 2px 2px 0 #fff, 4px 4px 0 #000;
+    display: inline-block;
+}
+
+.about-desc {
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.about-extra {
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    line-height: 1.7;
+}
+
+.about-star-img {
+    max-width: 80%;
+    height: auto;
+    margin-top: 0.5rem;
 }
 
 .linkedin-icon .bi-linkedin {
@@ -10,36 +98,93 @@
 }
 .linkedin-icon:hover .bi-linkedin,
 .linkedin-icon:focus .bi-linkedin {
-    color: #0a66c2;
+    color: #ffb3e6;
 }
 
-.accordion-button {
-    min-height: 120px;
-  }
-  .accordion-item {
-    min-height: 120px;
-  }
+/* Accordion styles */
+.accordion-item {
+    background: #000;
+    border: none;
+    margin-bottom: 2px;
+}
 
-body {
-    padding-top: 40px; 
+
+.accordion-button {
+    background: #fff;
+    color: #222;
+    font-family: 'MuseoModerno', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
 }
 
 .accordion-button:not(.collapsed) {
-    background-color: #212529;
-    color: #fff;
-  }
-  .accordion-button:not(.collapsed)::after {
-    filter: brightness(0) invert(1);
+    background: #FFF;
+    color: #222;
 }
-  .accordion-button:not(.collapsed):focus {
-    box-shadow: none;
-  }
-  .accordion-button:focus {
+
+.accordion-button:not(.collapsed)::after {
+    background-color: #fff;
+    border-radius: 0;
+    color: #222;
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed):focus {
     box-shadow: none;
     border-color: transparent;
-  }
+}
 
-  #imgModal .modal-body img {
+.accordion-body {
+    background: #fff !important;
+    color: #000 !important;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    border-radius: 0;
+    padding: 1.5rem;
+}
+
+/* Work section styles */
+.work-title {
+    font-family: 'MuseoModerno', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #ffb3e6;
+    letter-spacing: 0.03em;
+    text-shadow: 2px 2px 0 #fff, 4px 4px 0 #000;
+    display: inline-block;
+}
+
+.work-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.work-list li {
+    background: #f4fffa;
+    color: #000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    border: 1px solid #e6f7f1;
+}
+
+/* Responsive width for accordions */
+#designerAccordion,
+#brandingAccordion {
+    width: 100%;
+}
+
+
+
+/* Modal image styles */
+#imgModal .modal-body img {
     width: 100%;
     max-width: 200vw;
     max-height: 90vh;
@@ -48,12 +193,99 @@ body {
     margin-left: auto;
     margin-right: auto;
     object-fit: contain;
-  }
+}
 
-  #imgModal .modal-dialog {
+#imgModal .modal-dialog {
     max-width: 90vw;
-  }
+}
 
-  :target {
+/* Anchor scroll offset for fixed navbar */
+:target {
     scroll-margin-top: 70px;
-  }
+}
+
+
+header.custom-header,
+section#about,
+section#work {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+
+header.custom-header .container,
+section#about > .row,
+section#work > .row {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+/* Each section snaps to the top of the viewport */
+header.custom-header,
+section#about,
+section#work {
+    scroll-snap-align: start;
+}
+
+.contact-section {
+    min-height: 100vh;
+    overflow: hidden;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.contact-bg-img {
+    object-fit: cover;
+    object-position: top center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    filter: grayscale(1);
+    z-index: 1;
+}
+
+.contact-overlay {
+    background: rgba(0,0,0,0.45);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+}
+
+.contact-content {
+    z-index: 3;
+    position: relative;
+    display: flex;
+    align-items: center;      /* Center vertically */
+    justify-content: center;  /* Center horizontally */
+    height: 100vh;
+    padding-bottom: 0;        /* Remove bottom padding for perfect centering */
+}
+
+.contact-email {
+    font-family: 'MuseoModerno', sans-serif;
+    font-size: 2rem;
+    color: #ffb3e6;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    transition: color 0.2s;
+}
+
+.contact-email:hover,
+.contact-email:focus {
+    color: #fff;
+}
