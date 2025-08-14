@@ -1,11 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
-  // Popup image modal
-  document.querySelectorAll('.popup-img').forEach(function(img) {
-    img.style.cursor = 'pointer';
-    img.addEventListener('click', function() {
-      document.getElementById('modalImg').src = img.src;
-      var modal = new bootstrap.Modal(document.getElementById('imgModal'));
-      modal.show();
+  // Accordion modal logic
+   document.querySelectorAll('.accordion-button[data-modal-id]').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var modalId = btn.getAttribute('data-modal-id');
+      var content = document.getElementById('modalContent-' + modalId);
+      if (content) {
+        document.getElementById('modalInner').innerHTML = content.innerHTML;
+        // Swap text and image order in modalInner
+        const modalInner = document.getElementById('modalInner');
+        const row = modalInner.querySelector('.row');
+        if (row) {
+          const cols = row.querySelectorAll('.col-md-6, .col-md-9, .col-md-10, .col-md-11, .col-md-12');
+          if (cols.length === 2) {
+            // Move text column before image column
+            row.insertBefore(cols[1], cols[0]);
+          }
+        }
+        var modal = new bootstrap.Modal(document.getElementById('imgModal'));
+        modal.show();
+      }
     });
   });
 
