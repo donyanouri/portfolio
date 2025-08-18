@@ -1,3 +1,42 @@
+/* Header background image and overlay for index.html */
+.custom-header {
+  position: relative;
+  overflow: hidden;
+}
+.header-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('Images/Donya_Contact.jpg') top center / cover no-repeat;
+  filter: grayscale(1);
+  z-index: 1;
+}
+.header-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.45);
+  z-index: 2;
+}
+/* Fix snap position for project pages so header is not hidden behind navbar */
+.snap-container > .snap-section:first-child {
+  padding-top: 70px;
+}
+/* Enable vertical scroll snapping for main sections */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
 /* Compact, refactored stylesheet */
 
 @import url("https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
@@ -56,7 +95,8 @@ h3.h5.fw-bold {
 }
 .custom-header {
   background: var(--black);
-  padding: 100px 0 80px;
+  /* For index.html, keep large padding. For project pages, override with less padding. */
+  padding: 70px 0 80px;
 }
 .main-title {
   font-family: "MuseoModerno", sans-serif;
@@ -84,6 +124,15 @@ p {
   color: var(--white);
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+.about-title {
+  font-family: "MuseoModerno", sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+  color: var(--pink);
+  letter-spacing: 0.03em;
+  display: inline-block;
 }
 
 /* Work section */
