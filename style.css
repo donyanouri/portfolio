@@ -1,359 +1,176 @@
-@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Compact, refactored stylesheet */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root{
+  --pink:#ffb3e6;
+  --black:#000;
+  --white:#fff;
+  --muted:#f4fffa;
+  --radius:6px;
+  --gap:.45rem;
 }
 
-body {
-    padding-top: 40px;
-    background: #000; /* Black background */
-}
-
-p {
-    color: #fff;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    
-}
-
-
-h5 {
-    color: #ffb3e6;
-    font-family: 'MuseoModerno', sans-serif;
-    font-weight: 900;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.custom-navbar {
-    background: #000 !important;
-    font-family: 'MuseoModerno', sans-serif;
-    border-bottom: 1px solid #fff;
-}
-
-.custom-navbar .navbar-nav .nav-link {
-    color: #fff !important;
-    font-family: 'MuseoModerno', sans-serif;
-    transition: color 0.2s;
-}
-
-.custom-navbar .navbar-nav .nav-link:hover,
-.custom-navbar .navbar-nav .nav-link:focus,
-.custom-navbar .navbar-nav .nav-link.active {
-    color: #ffb3e6 !important;
-}
-
-footer {
-    border-top: 1px solid #fff;
-}
-
-.museo-font {
-    font-family: 'MuseoModerno', sans-serif !important;
-}
-
-.custom-header {
-    background: #000;
-    padding: 100px 0 80px 0;
-}
-
-.main-title {
-    font-family: 'MuseoModerno', sans-serif;
-    font-weight: 900;
-    font-size: 5rem;
-    color: #ffb3e6;
-    letter-spacing: 0.03em;
-    /* text-shadow: 2px 2px 0 #fff, 4px 4px 0 #000; */
-}
-
-.subtitle {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.2rem;
-    color: #fff;
-    font-weight: 700;
-    margin-top: 1.5rem;
-}
-
-.about-title {
-    font-family: 'MuseoModerno', sans-serif;
-    font-weight: 900;
-    font-size: 3.5rem;
-    color: #ffb3e6;
-    letter-spacing: 0.03em;
-    /* text-shadow: 2px 2px 0 #fff, 4px 4px 0 #000; */
-    display: inline-block;
-}
-
-.about-desc {
-    color: #fff;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    margin-top: 2rem;
-    margin-bottom: 0;
-    line-height: 1.7;
-}
-
-.about-extra {
-    color: #fff;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    margin-bottom: 0;
-    line-height: 1.7;
-}
-
-.about-star-img {
-    max-width: 80%;
-    height: auto;
-    margin-top: 0.5rem;
-}
-
-.linkedin-icon .bi-linkedin {
-    color: #fff;
-    transition: color 0.2s;
-}
-.linkedin-icon:hover .bi-linkedin,
-.linkedin-icon:focus .bi-linkedin {
-    color: #ffb3e6;
-}
-
-/* Accordion styles */
-.accordion-item {
-    background: #000;
-    border: none;
-    margin-bottom: 2px;
-}
-
-
-.accordion-button {
-    background: #fff;
-    color: #222;
-    font-family: 'MuseoModerno', sans-serif;
-    font-weight: 700;
-    font-size: 1.2rem;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-}
-
-.accordion-button:not(.collapsed) {
-    background: #FFF;
-    color: #222;
-}
-
-.accordion-button:not(.collapsed)::after {
-    background-color: #fff;
-    border-radius: 0;
-    color: #222;
-}
-
-.accordion-button:focus,
-.accordion-button:not(.collapsed):focus {
-    box-shadow: none;
-    border-color: transparent;
-}
-
-.accordion-body {
-    background: #fff !important;
-    color: #000 !important;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    border-radius: 0;
-    padding: 1.5rem;
-}
-
-/* Work section styles */
-.work-title {
-    font-family: 'MuseoModerno', sans-serif;
-    font-weight: 900;
-    font-size: 3.5rem;
-    color: #ffb3e6;
-    letter-spacing: 0.03em;
-    /* text-shadow: 2px 2px 0 #fff, 4px 4px 0 #000; */
-    display: inline-block;
-}
-
-.work-list {
-    list-style: none;
-    padding-left: 0;
-    margin-bottom: 0;
-}
-
-.work-list li {
-    background: #f4fffa;
-    color: #000;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 6px;
-    padding: 6px 16px;
-    border-radius: 2px;
-    border: 1px solid #e6f7f1;
-}
-
-/* Responsive width for accordions */
-#designerAccordion,
-#brandingAccordion {
-    width: 100%;
-}
-
-
-
-/* Modal image styles */
-/* --- Modal Styles --- */
-#imgModal .modal-dialog {
-    max-width: 90vw;
-}
-
-#imgModal .modal-body #modalInner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-}
-
-#imgModal .modal-body #modalInner .row {
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-}
-
-#imgModal .modal-body #modalInner .col-md-6,
-#imgModal .modal-body #modalInner .col-md-12 {
-    width: 100% !important;
-    max-width: 700px;
-    margin: 0 auto 1rem auto;
-    text-align: center;
-    padding: 0.5rem 0.5rem 0 0.5rem;
-}
-
-#imgModal .modal-body img {
-    width: 100%;
-    max-width: 100vw;
-    max-height: 70vh;
-    height: auto;
-    display: block;
-    margin: 0 auto 1rem auto;
-    object-fit: contain;
-}
-
-/* Modal text color */
-#imgModal .modal-body h3
-{
-    color: #ffb3e6;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  padding-top:40px;
+  background:var(--black);
+  color:var(--white);
+  font-family:"Nunito",sans-serif;
+  scroll-behavior:smooth;
+  scroll-snap-type:y mandatory;
+  overflow-y:scroll;
 }
 
 h3.h5.fw-bold {
-    font-size: 2rem;
-}
-#imgModal .modal-body p,
-#imgModal .modal-body a,
-#imgModal .modal-body .col-md-6,
-#imgModal .modal-body .col-md-12 {
-    color: #fff !important;
+    color: var(--pink);
 }
 
-/* Remove accordion button arrow */
-.accordion-button::after {
-    display: none !important;
+/* Navbar */
+.custom-navbar{
+  background:var(--black) !important;
+  border-bottom:1px solid var(--white);
+  font-family:"MuseoModerno",sans-serif;
 }
+.custom-navbar .nav-link{color:var(--white) !important;transition:color .15s}
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link:focus,
+.custom-navbar .nav-link.active{color:var(--pink) !important}
 
-/* Accordion button hover effect: text changes to pink */
-.accordion-button:hover,
-.accordion-button:focus {
-    color: #ffb3e6 !important;
-    background: #fff;
-    transition: color 0.2s;
+/* Header / titles */
+.museo-font{font-family:"MuseoModerno",sans-serif !important}
+.custom-header{background:var(--black);padding:100px 0 80px}
+.main-title{font-family:"MuseoModerno",sans-serif;font-weight:900;font-size:5rem;color:var(--pink);letter-spacing:.03em}
+.subtitle{font-weight:700;color:var(--white);margin-top:1.5rem;font-size:1.2rem}
+
+/* Generic text */
+p{color:var(--white);font-size:1.1rem;line-height:1.7}
+
+/* Work section */
+.work-title{font-family:"MuseoModerno",sans-serif;font-weight:900;font-size:3.5rem;color:var(--pink);letter-spacing:.03em;display:inline-block}
+
+/* Work list — compact */
+.work-list{list-style:none;padding:0;margin:0}
+.work-list li{
+  background:var(--muted);
+  color:var(--black);
+  font-weight:700;
+  padding:6px 16px;
+  border-radius:var(--radius);
+  border:1px solid transparent;
+  margin-bottom:var(--gap);
+  transition:background .15s,color .15s,border-color .15s;
 }
-
-/* Anchor scroll offset for fixed navbar */
-:target {
-    scroll-margin-top: 70px;
+.work-list li a{display:block;color:inherit;text-decoration:none}
+.work-list li:hover,
+.work-list li:focus-within{
+  background:var(--black);
+  border-color:var(--white);
 }
+.work-list li:hover a,
+.work-list li:focus-within a{color:var(--pink) !important}
 
-
-header.custom-header,
-section#about,
-section#work {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+/* Modal image / dark modal styling (applies to .modal-content.bg-dark used in pages) */
+.modal-content.bg-dark{background:var(--black);border:none}
+.modal-content.bg-dark .modal-header{border:0}
+.modal-content.bg-dark .modal-title{color:var(--pink)}
+.modal-content.bg-dark .btn-close{filter:invert(1)}
+.modal-content.bg-dark .modal-body{display:flex;align-items:center;justify-content:center;padding:1rem}
+.modal-content.bg-dark .modal-body img{
+  max-height:80vh;width:auto;max-width:100%;display:block;margin:0 auto;
+  object-fit:contain;
 }
+.modal-content.bg-dark a,
+.modal-content.bg-dark p{color:var(--white)}
 
+/* Accordion (kept minimal) */
+.accordion-item{background:var(--black);border:none;margin-bottom:.5rem}
+.accordion-button{background:var(--white);color:#222;font-family:"MuseoModerno",sans-serif;font-weight:700}
+.accordion-button:focus{box-shadow:none}
 
-header.custom-header .container,
-section#about > .row,
-section#work > .row {
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+/* Footer / contact */
+footer{border-top:1px solid var(--white)}
+.linkedin-icon .bi-linkedin{color:var(--white);transition:color .15s}
+.linkedin-icon:hover .bi-linkedin,
+.linkedin-icon:focus .bi-linkedin{color:var(--pink)}
 
-body {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-}
+/* Helpers */
+:target{scroll-margin-top:70px}
 
-/* Each section snaps to the top of the viewport */
-header.custom-header,
-section#about,
-section#work {
-    scroll-snap-align: start;
-}
+/* Layout helpers used by header/sections for snap alignment */
+header.custom-header, section#about, section#work{min-height:100vh;display:flex;align-items:center}
+header.custom-header .container, section#about > .row, section#work > .row{flex:1;display:flex;flex-direction:column;justify-content:center}
+
+/* small tweaks */
+.work-list a{padding:6px 8px;border-radius:6px;transition:background .15s,color .15s,border-color .15s}
+
 
 .contact-section {
-    min-height: 100vh;
-    overflow: hidden;
-    scroll-snap-align: start;
-    position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  scroll-snap-align: start;
+  position: relative;
 }
 
 .contact-bg-img {
-    object-fit: cover;
-    object-position: top center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    filter: grayscale(1);
-    z-index: 1;
+  object-fit: cover;
+  object-position: top center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  filter: grayscale(1);
+  z-index: 1;
 }
 
 .contact-overlay {
-    background: rgba(0,0,0,0.45);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2;
+  background: rgba(0, 0, 0, 0.45);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
 }
 
 .contact-content {
-    z-index: 3;
-    position: relative;
-    display: flex;
-    align-items: center;      /* Center vertically */
-    justify-content: center;  /* Center horizontally */
-    height: 100vh;
-    padding-bottom: 0;        /* Remove bottom padding for perfect centering */
+  z-index: 3;
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* Center vertically */
+  justify-content: center;
+  /* Center horizontally */
+  height: 100vh;
+  padding-bottom: 0;
+  /* Remove bottom padding for perfect centering */
 }
 
 .contact-email {
-    font-family: 'MuseoModerno', sans-serif;
-    font-size: 2rem;
-    color: #ffb3e6;
-    text-decoration: none;
-    background: transparent;
-    border: none;
-    outline: none;
-    transition: color 0.2s;
+  font-family: "MuseoModerno", sans-serif;
+  font-size: 2rem;
+  color: #ffb3e6;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: color 0.2s;
 }
 
 .contact-email:hover,
 .contact-email:focus {
-    color: #fff;
+  color: #fff;
+}
+
+.btn:hover {
+    color: var(--pink);
+    background-color: var(--black);
+    border-color: var(--bs-btn-hover-border-color);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+    color: var(--pink);
+    background-color: var(--black);
 }
