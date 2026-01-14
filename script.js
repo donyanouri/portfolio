@@ -115,4 +115,31 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // Make "About" link behave: same-page -> scroll to #about, other pages -> go to index.html#about
+  document.querySelectorAll('a.nav-link[href="#about"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      // allow modifier / middle-clicks
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+
+      const currentFile = window.location.pathname.replace(/^.*[\\/]/, '') || 'index.html';
+      const isIndex = currentFile === '' || currentFile === 'index.html';
+
+      if (isIndex) {
+        // same page: prevent navigation and scroll smoothly to #about
+        e.preventDefault();
+        const target = document.getElementById('about');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#about');
+        } else {
+          window.location.hash = '#about';
+        }
+      } else {
+        // on another page: navigate to index.html#about
+        e.preventDefault();
+        window.location.href = 'index.html#about';
+      }
+    });
+  });
 });
