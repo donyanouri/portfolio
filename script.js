@@ -23,37 +23,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Dynamic navbar active state based on scroll position and page
-  const sections = ['custom-header', 'about', 'work', 'contact'];
+  // Keep section navigation expressive without fighting native anchor behavior.
   const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-  function setActiveNav() {
-    // If we are on a project page, make Work link active
-    const path = window.location.pathname.replace(/^.*[\\/]/, '');
-    const projectPages = ['pinkie.html', 'tobii.html', 'temgroup.html', 'petclinic.html', 'nightlist.html', 'budi.html', 'lightstep.html', 'pharmacy.html', 'mehrarad.html'];
-    if (projectPages.includes(path)) {
-      navLinks.forEach(link => link.classList.remove('active'));
-      const workLink = document.querySelector('.navbar-nav .nav-link[href="#work"]');
-      if (workLink) workLink.classList.add('active');
-      return;
-    }
-
-    let index = sections.length - 1;
-    for (let i = 0; i < sections.length; i++) {
-      const section = document.getElementById(sections[i]) || document.querySelector('.' + sections[i]);
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight / 2) {
-          index = i;
-        }
-      }
-    }
-    navLinks.forEach(link => link.classList.remove('active'));
-    if (navLinks[index]) navLinks[index].classList.add('active');
+  const sections = document.querySelectorAll('main [id]');
+  const sectionLinks = [...navLinks].filter(link => link.getAttribute('href')?.startsWith('#'));
+  if (sections.length && sectionLinks.length) {
+    const sectionObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        sectionLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`));
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => sectionObserver.observe(section));
   }
 
-  window.addEventListener('scroll', setActiveNav);
-  setActiveNav();
+  const path = window.location.pathname.replace(/^.*[\\/]/, '');
+  const projectPages = ['wsocial.html', 'mushylab.html', 'pinkie.html', 'tobii.html', 'temgroup.html', 'petclinic.html', 'studiomosaic.html', 'nightlist.html', 'budi.html', 'lightstep.html', 'pharmacy.html', 'mehrarad.html'];
+  if (projectPages.includes(path)) {
+    navLinks.forEach(link => link.classList.toggle('active', link.textContent.trim().toLowerCase() === 'work'));
+  }
 
   // New: project image modal handler
   document.querySelectorAll('.project-image').forEach(function(img) {
